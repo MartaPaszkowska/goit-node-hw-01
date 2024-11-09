@@ -18,23 +18,23 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// TODO: refaktor
-function invokeAction({ action, id, name, email, phone }) {
+async function invokeAction({ action, id, name, email, phone }) {
 	switch (action) {
 		case "list":
-			// ...
+			await listContacts();
 			break;
 
 		case "get":
-			// ... id
+			const contact = await getContactById(id);
+			console.log("Pobrany kontakt:", contact);
 			break;
 
 		case "add":
-			// ... name email phone
+			await addContact(name, email, phone);
 			break;
 
 		case "remove":
-			// ... id
+			await removeContact(id);
 			break;
 
 		default:
