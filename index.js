@@ -4,3 +4,5 @@ const {
 	removeContact,
 	addContact,
 } = require("./contacts");
+
+console.log(listContacts);
