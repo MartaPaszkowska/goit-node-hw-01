@@ -25,8 +25,8 @@ async function invokeAction({ action, id, name, email, phone }) {
 			break;
 
 		case "get":
-			const contact = await getContactById(id);
-			console.log("Pobrany kontakt:", contact);
+			await getContactById(id);
+
 			break;
 
 		case "add":
@@ -38,7 +38,7 @@ async function invokeAction({ action, id, name, email, phone }) {
 			break;
 
 		default:
-			console.warn("\x1B[31m Unknown action type!");
+			console.warn("Unknown action type!");
 	}
 }
 

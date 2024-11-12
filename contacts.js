@@ -36,7 +36,7 @@ async function getContactById(contactId) {
 		if (!contact) {
 			console.log("Nie znaleziono kontaktu o podanym ID");
 		}
-		return contact;
+		console.log("Pobrany kontakt:", contact);
 	} catch (error) {
 		console.error("Błąd podczas pobierania kontaktu:", error.message);
 	}
